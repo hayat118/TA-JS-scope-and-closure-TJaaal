@@ -57,6 +57,7 @@ function sayHi() {
 
 sayHi();
 ```
+sayHi()=Lydia 21;
 
 <!-- Put your image below -->
 
@@ -65,8 +66,8 @@ sayHi();
 4.
 
 ```js
-console.log(arr); // output
-console.log(username); // output
+console.log(arr); // output.....1,2,3,4,5,6
+console.log(username); // output....Sam;
 var usename = 'Sam';
 var arr = [1, 2, 3, 4, 5, 6];
 
