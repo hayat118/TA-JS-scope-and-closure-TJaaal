@@ -10,6 +10,8 @@ Have `map` return a new array filled with values that are the result of the 'cal
 
 ```js
 // Your code goes here
+var arr=[1,2,3,4,5]
+var newArr=arr.map(multiplyByTwo(n))
 
 // Test Your Code
 function multiplyByTwo(n) {
