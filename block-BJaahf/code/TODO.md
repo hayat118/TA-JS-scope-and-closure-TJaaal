@@ -10,8 +10,12 @@
 **You can use normal for loop for this function**
 
 ```js
-function loop() {
+function loop(n) {
   // Your code goes here
+  arr=[1,2,3,4,5]
+  for (let i=0 ;i<n.length; i++){
+     return arr[i];
+  }
 }
 
 loop(
@@ -43,9 +47,21 @@ reduce(nums, add, 0); //-> 8
 3. Construct a function intersection that compares input arrays and returns a new array with elements found in all of the inputs.
 
 ```js
-function intersection(arrays) {}
+arraysOne=[5, 10, 15, 20],
+arraysTwo= [15, 88, 1, 5, 7],
+arraysThree=[1, 10, 15, 5, 20]
+function intersection(arraysOne,arraysTwo) {
+  let final=[]
+   for (let i of arraysTwo){
+     if(arraysOne.includes(i)){
+       final.push(i);
+     }
+   }
+   return final;
+  }
 
 // Test
+let num=intersection(arrays)
 console.log(
   intersection(
     [5, 10, 15, 20],
@@ -58,7 +74,9 @@ console.log(
 4. Construct a function `union` that compares input arrays and returns a new array that contains all elements. If there are duplicate elements, only add it once to the new array. Preserve the order of the elements starting from the first element of the first input array.
 
 ```js
-function union(arrays) {}
+function union(arrays) {
+  
+}
 
 // Test
 console.log(
