@@ -4,12 +4,26 @@
 
 ```js
 // Your code goes here
+function outer(str){
+  function sayHello(){
+    alert(`Hello`)
+  }
+sayHello();
+
+}
 ```
 
 2. Write a function `delay` that accepts two arguments, a callback and the wait for the time in milliseconds (1000 ms is 1 second). `delay` should return a function that, when invoked waits for the specified amount of time before executing. (Use setTimeout)
 
 ```js
 // Your code goes here
+var array=[1,2,3,4,5]
+function delay(cb,time){
+  for (var i=0;i<array.length; i++)
+  setTimeout(()=>{
+    console.log(array[i])
+  },1000)
+}
 ```
 
 3. Write a function with a closure. The first function should only take one argument, someone's last name, and return the inner function. The returned `inner` function should take one more argument, someone's first name. When inner function when called it should console.log both the first name and the last name with a space.
@@ -17,6 +31,9 @@
 ```js
 function lastName() {
   //  Your code goes here
+  function firstName(){
+
+  }
 }
 
 let lastNameLee = lastName('lee'); // logs nothing
@@ -56,6 +73,11 @@ When `forEach` function is called it returns another function. When the returned
 ```js
 function forEach() {
   // Your code goes here
+  var index=0;
+  final=[];
+  function next(num){
+    return final.push(num);
+  }
 }
 
 let next = [1, 2, 3, 4, 5];
