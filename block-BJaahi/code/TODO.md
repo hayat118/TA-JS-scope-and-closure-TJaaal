@@ -65,6 +65,27 @@ var nextMessage = sayHello('Test');
 
 ```js
 // Your code goes here
+
+// Declaration Phase
+var username=undefined;
+let number;
+
+function sayHello(name) {
+  return `Hello ${name}`;
+}
+let message;
+var nextMessage =undefined;
+
+// Execution Phase
+var username = 'Arya';
+let number = 21;
+
+console.log(username,number);
+
+let message = sayHello(username);
+var nextMessage = sayHello('Test');
+
+
 ```
 
 3.
@@ -107,7 +128,23 @@ var nextMessage = sayHello('Test');
 <!-- Answer -->
 
 ```js
-// Your code goes here
+// declaration phase
+let username;
+let number;
+let message;
+let sayHello = function (name) {
+  return `Hello ${name}`;
+};
+
+var nextMessage = undefined;
+
+// Execution Phase
+let number = 21;
+
+let message = sayHello(username);
+var nextMessage = sayHello('Test');
+
+
 ```
 
 5.
@@ -123,6 +160,16 @@ let age = 21;
 
 ```js
 // Your code goes here
+// Declaration phase
+var name =undefined;
+let age;
+
+// execution phase
+var name = 'Lydia';
+let age = 21;
+
+
+
 ```
 
 6.
