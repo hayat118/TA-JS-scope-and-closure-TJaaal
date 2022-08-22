@@ -397,8 +397,6 @@ let allFunctions = [
   half,
 ];
 
-allFunctions.reduce(num=>{
-  return allFunctions;
-})
+allFunctions.reduce((acc,cv)=>cv(acc),100)
 // Answer is: 447
 ```
