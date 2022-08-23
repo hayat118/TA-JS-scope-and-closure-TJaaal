@@ -7,10 +7,8 @@ The returned function accepts a sentence. If the sentence contains the `fromWord
 ```js
 function censor(fromWord, toWord) {
   //  Your code goes here
-  return function(){
-    if(message.includes(){
-      
-    })
+  return function(sentence){
+   return sentence.replace(fromWord,toWord)
   }
 }
 
@@ -31,6 +29,20 @@ The returned function either accepts two parameter or one parameter.
 ```js
 function multipleCensor() {
   //  Your code goes here
+  let word=[];
+  return function(...params){
+    if(params.length===1){
+       let quote=params[0];
+       word.forEach(pair=>{
+         quote=quote.replace(pair[0],pair[1])
+       });
+       return quote;
+    }else if(params.length===2){
+       word.push(params);
+    }else{
+      alert(`number is invalid`)
+    }
+  }
 }
 
 let censorQuote = multipleCensor();
@@ -54,8 +66,17 @@ The returned function accepts one parameter.
 - If the parameter is the same as the password it will return the object in which we stored the values.
 
 ```js
-function createCache() {
+function createCache(cb,pwd) {
   // Your code goes here
+  let obj={};
+  return function(param){
+    if(param !==pwd){
+     obj[param]= cb(param);
+     return cb(param);
+    }else {
+      return obj;
+    }
+  }
 }
 
 function add10(num) {
@@ -74,9 +95,24 @@ addCache('foo'); // {12: 22, 100: 110, 1: 11}
 4. Change the above function in such a way that when the returned function is called with any other value than password. It should first check the object where we are storing the argument and return value. If the key is present return the value form the object itself. Otherwise call the callback function with the parameter.
 
 ```js
-function createCache() {
+function createCache(cb,pwd) {
   // Your code goes here
-}
+  let obj={}
+  return function(param){
+    if(param!==pwd){
+      if(obj[param]){
+        return obj[param]
+      }else  {
+        obj[param]=cb(param);
+        return cb(param);
+      }
+      }else{
+        return obj;
+      
+    }
+  }
+  }
+
 
 function add10(num) {
   return num + 10;
