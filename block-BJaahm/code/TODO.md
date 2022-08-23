@@ -2,12 +2,17 @@
 
 ```js
 function intersection(...arrays) {
-  let first=arrays[0];
-  for(let i=0; i<arrays.length; i++){
-    let second=arrays[i];
-    first=first.filter(elm=>second.includes(elm));
-  }
-  return first;
+  // let first=arrays[0];
+  // for(let i=0; i<arrays.length; i++){
+  //   let second=arrays[i];
+  //   first=first.filter(elm=>second.includes(elm));
+  // }
+  // return first;
+
+  return arrays.reduce((acc,cv)=>{
+    acc=acc.filter(elm=>cv.includes(elm));
+    return acc;
+  })
 
 }
 
@@ -25,12 +30,18 @@ console.log(
 
 ```js
 function union(...arrays) {
-   let first=arrays[0];
-  for(let i=0; i<arrays.length; i++){
-    let second=arrays[i];
-    first=first.filter(elm=>!second.includes(elm)).concat(second);
-  }
-  return first;
+  //  let first=arrays[0];
+  // for(let i=0; i<arrays.length; i++){
+  //   let second=arrays[i];
+  //   first=first.filter(elm=>!second.includes(elm)).concat(second);
+  // }
+  // return first;
+
+return arrays.reduce((acc,cv)=>{
+    acc=acc.filter(elm=>!cv.includes(elm)).concat(cv);
+    return acc;
+})
+
 }
 
 // Test
