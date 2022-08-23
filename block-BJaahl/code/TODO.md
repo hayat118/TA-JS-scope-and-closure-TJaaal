@@ -3,6 +3,9 @@
 ```js
 function once(cb) {
   // your code goes here
+  return function(){
+    return once(cb)
+  }
 }
 
 // TEST
@@ -17,7 +20,7 @@ log(); // return undefinde (can't be called twice)
 2. Change the above function in such a way that the function accepts two parameter a callback function and parameter for the callback function. When calling the function pass the parameters.
 
 ```js
-function once(cb) {
+function once(cb,param) {
   // your code goes here
 }
 
